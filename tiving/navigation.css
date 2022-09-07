@@ -1,0 +1,40 @@
+.sticky_navi {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.GNB {
+  padding: 0 50px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  /**
+  background-color: rgba(0, 0, 0, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  */
+}
+
+
+.logo-svg {
+  width: 8.5rem;
+}
+
+.GNB a {
+  color: white;
+  text-decoration: none;
+  line-height: 4;
+  margin-right: 3rem;
+  font-size: 1.8rem;
+}
+
+
+.right {
+  position: relative;
+  margin-left: auto;
+  align-self: center;
+}
