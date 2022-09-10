@@ -1,0 +1,112 @@
+/**content*/
+.container {
+  margin-bottom: 80px;
+}
+
+.content {
+  margin-left: 50px;
+  margin-right: 50px;
+  
+  z-index: 1;
+  position: relative;
+  color: white;
+}
+
+.sub-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sub-title h1 {
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+.sub-title a {
+  text-decoration: none;
+  color: rgba(122, 122, 122);
+  font-size: 1.4rem;
+}
+
+.sub-title a:visited {
+  text-decoration: none;
+}
+
+.sub-title a:hover {
+  color: white;
+}
+
+.content .list {
+  display: flex;
+  color: rgb(122, 122, 122);
+
+}
+
+.content .list .poster.long {
+  max-width: 180px;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.content .list .poster.wide {
+  max-width: 275px;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.content .list .list-row {
+  color: rgb(122, 122, 122);
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.flag {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: red;
+  padding: 0.4rem 1rem;
+  margin: 0.4rem 0.4rem;
+  font-size: 0.8rem;
+  color: white;
+  border-radius: 0.4rem;
+}
+
+.content .list .list-row:hover {
+  color: white;
+  transform: translateY(-3%);
+  box-shadow: 0px 0px 20px black;
+}
+
+.content .list .list-row p {
+  margin: 0;
+  padding-top: 0.8rem;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content .list .list-row .rank {
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  z-index: 2;
+  line-height: 0;
+}
+
+.rank-grid {
+  display: inline-grid;
+  grid-template-columns: auto 2fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+/**event*/
+.content .list .list-row .banner {
+  max-width: 275px;
+  border-radius: 0.5rem;
+}

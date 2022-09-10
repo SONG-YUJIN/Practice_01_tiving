@@ -1,0 +1,133 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+	line-height: 1;
+    background-color: black;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/**CSS START*/
+
+.header {
+    margin: 0 50px;
+}
+
+.header__inner {
+    display: flex;
+    line-height: 4;
+    
+}
+
+.logo img {
+    vertical-align: middle;
+}
+.header__logo, .header__text * {
+    padding-right: 1.875rem;
+}
+
+.header__text * {
+    text-decoration: none;
+    color: white;
+    font-size: 1.125rem;
+}
+/*버튼 컬러 none으로 해도 디폴트값으로 자꾸 그레이가 잡히는 현상 물어보기*/
+
+.header__icon {
+    margin-left: auto;
+}
+
+.header__item {
+    border: none;
+    background-color: black;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.header__item--profile {
+    margin-left: 1.875rem;
+    border-radius: 0.25rem;
+}
+
+.main__inner {
+    margin: 0 50px;
+}
+
+.main__button {
+    display: flex;
+}
+.button__play {
+    border: none;
+    border-radius: 0.25rem;
+    background-color: white;
+    padding: 1.25rem 3.75rem;
+    font-weight: bold;
+    font-size: 1.25rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    line-height: 2;
+}
+
+.button__play::before {
+    content: '';
+    border-bottom: 0.625rem solid transparent;
+    border-top: 0.625rem solid transparent;
+    border-left: 1rem solid black;
+    margin-right: 0.75rem;
+}
+
+.button__item {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: black;
+    color: white;
+    align-self: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.button__item img {
+    margin-bottom: 10px;
+}

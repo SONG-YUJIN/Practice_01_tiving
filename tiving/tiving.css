@@ -1,16 +1,20 @@
-html { 
-    font-size: 10px;
+html {
+    /* font-size: 16px; */
+    font-size: calc(6px + .52vw);
+    font-family: 'Roboto', sans-serif;
 }
+
 body {
     margin: 0;
     background-color: black;
+    overflow-x: hidden;
 }
-/**header*/
+
+/** header **/
 .slideshow {
-    height: 600px;
-    overflow: hidden;
     position: relative;
 }
+
 .slideshow::after {
     content: ' ';
     position: absolute;
@@ -20,7 +24,23 @@ body {
     height: 100%;
     background: linear-gradient(to top, #000 0, #00000000 20%, #00000000 20%, #00000000 80%, #00000000 80%, #000000 100%);
 }
-.dot-indcator {
+
+.wrapper {
+    display: flex;
+    animation: slide 16s infinite;
+}
+
+.show {
+    position: relative;
+    color: white;
+    flex: 0 0 100%;
+}
+
+.wrapper .show img {
+    width: 100%;
+}
+
+.dot-indicator {
     display: flex;
     align-items: center;
     position: absolute;
@@ -29,16 +49,19 @@ body {
     color: white;
     z-index: 1;
 }
-.pause::before { 
+
+.pause::before {
     content: ' ';
     border: 2px solid white;
     margin-right: 0.4rem;
-} 
-.pause::after { 
+}
+
+.pause::after {
     content: ' ';
     border: 2px solid white;
     margin-right: 1.6rem;
-} 
+}
+
 .dot {
     display: inline-block;
     width: 0.8rem;
@@ -47,6 +70,7 @@ body {
     background-color: white;
     margin-right: 0.8rem;
 }
+
 .slideshow .more-btn {
     font-size: 1.6rem;
     text-decoration: none;
@@ -54,311 +78,214 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid white;
     border-radius: 0.4rem;
-    padding: 1.8rem 4.2rem;
+    padding: 1.4rem 4rem;
     display: inline-block;
     position: absolute;
     top: 80%;
     right: 50px;
     z-index: 1;
 }
+
 .more-btn:hover {
     color: white;
 }
-.wrapper {  
-    display: flex;
-    animation: slide 16s infinite;
-}
-.show {
-    position: relative;
-    color: white;
-    flex: 0 0 100%;
-}
-.wrapper .show img {
-    width: 100%;
-}
-/** z-index를 줘도 그라데이션 위로 안올라옴. */
-/** 망했다. 이미지랑 텍스트랑 그룹핑 돼있어서 텍스트 위치가 이미지 사이즈가 변동 될때마다 같이 변동된다...ㅠㅠ 내가 이거 두개 그룹핑해서 애니메이션 걸리게 할려고 어떤 지랄을 했는데 ㅠㅠ 이걸 다시 풀어야한다니 원통하다ㅠㅠㅠㅠ*/
+
 .info {
     display: flex;
     position: absolute;
-    top: 36%;
+    top: 40%;
     left: 50px;
     flex-direction: column;
-    
 }
+
 .info .title {
-    font-size: 3.8rem;
+    font-size: 3rem;
     font-weight: bold;
     line-height: 1;
 }
+
 .info .info-text {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: rgb(220, 220, 220);
     margin-top: 1rem;
 }
-@keyframes slide{
-    0%{
+
+@keyframes slide {
+    0% {
         transform: translateX(0);
     }
-    25%{
+
+    25% {
         transform: translateX(0);
     }
-    30%{
+
+    30% {
         transform: translateX(-100%);
     }
-    50%{
+
+    50% {
         transform: translateX(-100%);
     }
-    55%{
+
+    55% {
         transform: translateX(-200%);
     }
-    75%{
+
+    75% {
         transform: translateX(-200%);
     }
-    80%{
+
+    80% {
         transform: translateX(-300%);
     }
-    100%{
+
+    100% {
         transform: translateX(-300%);
     }
 }
-.sticky_navi {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-}
-.GNB {
-    padding: 0 50px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top:0;
-    display: flex;
-    background-color: rgba(0, 0, 0, 0.9);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-}
-.logo-svg {
-    width: 8.5rem;
-}
-.GNB a {
-    color: white;
-    text-decoration: none;
-    line-height: 4;
-    margin-right: 30px;
-    font-size: 2rem;
-}
+
 img {
     vertical-align: middle;
 }
-.right {
-    position: relative;
-    margin-left: auto;
-    align-self: center;
-}
+
 .icon.profile {
     content: ' ';
-    background-image: url(img/live.jpeg);
-    background-size: 40px 40px;
-    width: 40px;
-    height: 40px;
+    background-image: url(img/dummy.jpeg);
+    background-size: 3rem 3rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 0.5rem;
     display: inline-block;
     vertical-align: middle;
-    margin-left: 30px;
-} 
+    margin-left: 2.4rem;
+}
+
 .live::before {
     content: ' ';
-    background-image: url(img/live.jpeg);
-    background-size: 20px 20px;
-    width: 20px;
-    height: 20px;
+    background-image: url(img/dummy.jpeg);
+    background-size: 2rem 2rem;
+    width: 2rem;
+    height: 2rem;
     display: inline-block;
     vertical-align: middle;
 }
-/**content*/
-.container {
-    margin-bottom: 80px;
-}
-.content {
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: -3rem;
-    z-index: 1;
-    position: relative;
-    color: white;
-}
-.sub-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.sub-title h1 {
-    margin: 0;
-    padding-bottom: 1rem;
-}
-.sub-title a {
-    text-decoration: none;
-    color: rgba(122, 122, 122);
-    font-size: 1.4rem;
-}
-.sub-title a:visited {
-    text-decoration: none;
-}
-.sub-title a:hover {
-    color: white;
-}
-.content .list {
-    display: flex;
-    color: rgb(122, 122, 122);
-    
-}
-.content .list .poster.long {
-    max-width: 180px;
-    height: auto;
-    border-radius: 0.5rem;
-}
-.content .list .poster.wide {
-    max-width: 275px;
-    height: auto;
-    border-radius: 0.5rem;
-}
-.content .list .list-row {
-    color: rgb(122, 122, 122);
-    font-size: 1.6rem;
-    margin-right: 1rem;
-    transition: all 0.2s ease-in-out;
-    position: relative;
-}
-.flag {
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: red;
-    padding: 0.4rem 1rem;
-    margin: 0.4rem 0.4rem;
-    font-size: 0.8rem;
-    color: white;
-    border-radius: 0.4rem;
-}
-.content .list .list-row:hover {
-    color: white;
-    transform: translateY(-3%);
-    box-shadow: 0px 0px 20px black;
-}
-.content .list .list-row p {
-    margin: 0;
-    padding-top: 0.8rem;
-    width: auto;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.content .list .list-row .rank {
-    font-size: 6rem;
-    font-weight: bold;
-    color: white;
-    z-index: 2;
-    line-height: 0;
-}
-.rank-grid { 
-    display: inline-grid;
-    grid-template-columns: auto 2fr;
-    gap: 1rem;
-    align-items: center;
-}
-/**event*/
-.content .list .list-row .banner {
-    max-width: 275px;
-    border-radius: 0.5rem;
-}
+
+
 /**footer*/
 .footer {
     margin: 14rem 0 8rem;
 }
+
 .notice {
     display: flex;
 }
-.notice a, .info-category a {
+
+.notice a,
+.info-category a {
     text-decoration: none;
     color: rgb(220, 220, 220);
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
+
 .go.brand {
-    padding-right: 30px;
+    padding-right: 3rem;
 }
+
 .go.brand::after {
     content: ' ';
     position: absolute;
-    width: 1px;
-    height: 16px;
+    width: 0.1rem;
+    height: 1.6rem;
     background-color: rgb(220, 220, 220);
-    margin-left: 15px;
+    margin-left: 1.5rem;
 }
+
 .navi.left {
     display: flex;
-    flex-shrink: 0;  
-    padding: 20px 0;
+    flex-shrink: 0;
+    padding: 2rem 0;
 }
+
 .navi.left .menu-notice {
     margin-right: 1.6rem;
     color: rgb(122, 122, 122);
-} 
+}
+
 .navi.right {
     display: flex;
-    flex-shrink: 0; 
+    flex-shrink: 0;
     position: relative;
 }
+
 .info-category {
-    padding: 20px 0;
+    padding: 2rem 0;
 }
+
 .info-category a::after {
     content: ' ';
     border: 1px solid rgb(122, 122, 122);
     margin: 0 1.6rem;
     opacity: 0;
 }
+
 .info-list {
     position: relative;
     color: rgb(122, 122, 122);
-    font-size: 1.4rem;
-    padding-bottom: 24px;
+    font-size: 1.2rem;
+    padding-bottom: 2.4rem;
 }
+
 .info-list p {
     margin: 0 0 0.6rem;
 }
+
 .info-list span {
     padding-right: 1rem;
     line-height: 1;
 }
+
 .info-list span::after {
     content: ' ';
     position: absolute;
-    width: 1px;
-    height: 12px;
+    width: 0.1rem;
+    height: 1.2rem;
     background-color: rgb(122, 122, 122);
-    margin-left: 6px;
+    margin-left: 0.6rem;
 }
+
 .info-list span:last-child::after {
     opacity: 0;
 }
+
 .info-list a {
     color: rgb(122, 122, 122);
 }
+
 .sns {
     display: flex;
-    padding-bottom: 24px;
+    padding-bottom: 2.4rem;
 }
-.sns > * {
+
+.sns>* {
     width: 3.4rem;
     height: 3.4rem;
     border-radius: 50%;
     background-color: rgb(122, 122, 122);
     margin-right: 1.2rem;
+    position: relative;
 }
+
+.sns img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-top: -15px;
+    
+}
+
 .copyright {
     color: rgb(122, 122, 122);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin: 0;
 }
